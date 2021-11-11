@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Weather Dashboard</title>
+</head>
+
+<body class="flex-column min-100-vh">
+    <header>
+        <h1 class="col-12 title">Weather Dashboard</h1>
+    </header>
+    <main class="flex-row justify-space-between">
+        <!--left search resuls section-->
+        <section class="col-2 card side-bar">
+            <div class="search-form">
+                <h3> Search for a City:</h3>
+                <form id="user-form" class="card-body">
+                    <input hint="search" type="text" autofocus="true" class="form-input" />
+                </form>
+            </div>
+            <div class="search-button">
+                <button type="submit" id="search">Search</button>
+            </div>
+            <div class="city-btns">
+                <div class="city-button-container">
+                <button type="submit" class="btn"> Dallas</button>
+                <button type="submit" class="btn">Sacramento</button>
+                <button type="submit" class="btn">Berkley</button>
+                <button type="submit" class="btn">San Fransisco</button>
+                <button type="submit" class="btn">San Jose</button>
+                <button type="submit" class="btn">PalAlto</button>
+            </div>
+            </div>
+        </section>
+        <!--Right results section-->
+        <section class="col-9 card results">
+            <div class="city-info">
+                <h1>Atlanta</h1>
+                <p>
+                    Temparature :<span id ="temp"></span>
+                </p>
+                <p>
+                    Wind : <span id ="wind"></span>
+                </p>
+                <p>
+                    Humidity: <span id ="hum"></span>
+                </p>
+
+                <p>
+                    UV Index: <span id ="uv"></span>
+                </p>
+
+            </div>
+            <h3>5-Day Forecast:</h3>
+            <!--Next five days forecast-->
+            <section class="days-of-week">
+                <!---->
+                <div class="days" id="monday">
+                    <p>
+                        Monday 3/31/2020
+                    </p>
+                    <div class="weather-icon">
+
+                    </div>
+                    Temp: <span class ="mond-temp"></span>
+                    </p>
+                    <p>
+                        wind: <span class ="mon-wind"></span>
+                    </p>
+                    <p>
+                        Humidity:<span class="mon-hum"></span>
+                    </p>
+
+                </div>
+                <div class="days" id="tuesday">
+                    <p>
+                        Tuesday 3/31/2020
+
+                    </p>
+                    <div class="weather-icon">
+
+                    </div>
+                    Temp:<span id ="tue-tem"></span>
+                    </p>
+                    <p>
+                        wind:<span id ="tue-wind"></span>
+                    </p>
+                    <p>
+                        Humidity:<span class ="tue-hum"></span>
+                    </p>
+                </div>
+                <div class="days" id="Wednesday">
+                    <p>
+                        Wednesday 3/31/2020
+                    </p>
+                    <div class="weather-icon">
+
+                    </div>
+                    Temp:<span id ="wed-temp"></span>
+                    </p>
+                    <p>
+                        wind:<span class ="wed-wind"></span>
+                    </p>
+                    <p>
+                        Humidity:<span class ="Wed-hum"></span>
+                    </p>
+                </div>
+                <div class="days" id="thursday">
+                    <p>
+                        Thurday 3/31/2020
+                    </p>
+                    <div class="weather-icon">
+
+                    </div>
+                    <p>
+                        Temp:<span id ="thu-temp"></span>
+                    </p>
+
+
+                    <p>
+                        wind:<span id ="thu-wind"></span>
+                    </p>
+                    <p>
+                        Humidity:<span class ="thu-hum"></span>
+                    </p>
+
+                </div>
+
+                <div class="days" id="friday">
+                    <p>
+                        Friday 3/31/2020
+                    </p>
+                    <!--weather image icon-->
+                    <div class="weather-icon">
+
+                    </div>
+                    <p>
+                        Temp:<span class="fri-temp"></span>
+                    </p>
+                    <p>
+                        wind:<span class="frid-wind"></span>
+                    </p>
+                    <p>
+                        Humidity:<span id ="frid-hum"></span>
+                    </p>
+                </div>
+
+
+            </section>
+        </section>
+    </main>
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>

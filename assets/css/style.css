@@ -1,0 +1,69 @@
+body{
+margin: 0 auto;
+}
+
+header {
+    background-color: lightseagreen;
+    padding:30px;
+}
+header h1{
+    text-align: center;
+    font-style: bold;
+    color: white;
+}
+main{
+    display: flex;
+}
+
+.days-of-week{
+    display: flex;
+    flex-direction: row;
+}
+
+.days{
+    background-color: lightblue;
+    flex: 1;
+}
+.side-bar{
+    display: flex;
+    flex-direction: column;
+    margin:20px;
+    align-items: center;
+}
+.search-form{
+    flex:1
+}
+.search-button{
+    flex: 2;
+
+}
+#search{
+    background-color:blue;
+    color: white;
+    border-radius: 8px;
+    width: 200px;
+}
+.city-btns{
+    flex: 1;
+    align-items: center;
+}
+.city-button-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin:20px;
+}
+.btn{
+    background-color: lightslategrey;
+    margin:5px;
+    width:200px;
+
+}
+.results{
+    margin: 20px;
+}
+
+.days{
+    margin: 20px;
+    padding: 20px;
+}
