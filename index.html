@@ -21,8 +21,8 @@
         <section class="col-2 card side-bar">
             <div class="search-form">
                 <h3> Search for a City:</h3>
-                <form id="user-form" class="card-body">
-                    <input hint="search" type="text" autofocus="true" class="form-input" />
+                <form id="search-form" class="card-body">
+                    <input hint="search" type="text" autofocus="true" class="form-input" id="user-input" />
                 </form>
             </div>
             <div class="search-button">
@@ -30,129 +30,78 @@
             </div>
             <div class="city-btns">
                 <div class="city-button-container">
-                <button type="submit" class="btn"> Dallas</button>
-                <button type="submit" class="btn">Sacramento</button>
-                <button type="submit" class="btn">Berkley</button>
-                <button type="submit" class="btn">San Fransisco</button>
-                <button type="submit" class="btn">San Jose</button>
-                <button type="submit" class="btn">PalAlto</button>
-            </div>
+                    <button type="submit" class="btn"> Dallas</button>
+                    <button type="submit" class="btn">Sacramento</button>
+                    <button type="submit" class="btn">Berkley</button>
+                    <button type="submit" class="btn">San Fransisco</button>
+                    <button type="submit" class="btn">San Jose</button>
+                    <button type="submit" class="btn">PalAlto</button>
+                </div>
             </div>
         </section>
         <!--Right results section-->
         <section class="col-9 card results">
             <div class="city-info">
-                <h1>Atlanta</h1>
+                <h3>City Name: <span id="city-name"></span></h3>
                 <p>
-                    Temparature :<span id ="temp"></span>
+                    Temperature : <span id="temp"></span>
                 </p>
                 <p>
-                    Wind : <span id ="wind"></span>
+                    Wind : <span id="wind"></span>
                 </p>
                 <p>
-                    Humidity: <span id ="hum"></span>
+                    Humidity: <span id="hum"></span>
                 </p>
 
                 <p>
-                    UV Index: <span id ="uv"></span>
+                    UV Index: <span id="uv"></span>
                 </p>
 
             </div>
             <h3>5-Day Forecast:</h3>
             <!--Next five days forecast-->
             <section class="days-of-week">
-                <!---->
-                <div class="days" id="monday">
-                    <p>
-                        Monday 3/31/2020
-                    </p>
-                    <div class="weather-icon">
-
-                    </div>
-                    Temp: <span class ="mond-temp"></span>
-                    </p>
-                    <p>
-                        wind: <span class ="mon-wind"></span>
-                    </p>
-                    <p>
-                        Humidity:<span class="mon-hum"></span>
-                    </p>
-
+                <!--Day 1-->
+                <div class="days card" id="day-1">
+                    <p>Monday 3/31/2020</p>
+                    <div class="weather-icon"></div>
+                    <p>Temp: <span id="fut-temp-1"> </span></p>
+                    <p>wind: <span id="fut-wind-1"> </span></p>
+                    <p>Humidity: <span id="fut-hum-1"> </span></p>
                 </div>
-                <div class="days" id="tuesday">
-                    <p>
-                        Tuesday 3/31/2020
-
-                    </p>
-                    <div class="weather-icon">
-
-                    </div>
-                    Temp:<span id ="tue-tem"></span>
-                    </p>
-                    <p>
-                        wind:<span id ="tue-wind"></span>
-                    </p>
-                    <p>
-                        Humidity:<span class ="tue-hum"></span>
-                    </p>
+                <!--Day 2-->
+                <div class="days card" id="day-2">
+                    <p>Tuesday 3/31/2020</p>
+                    <div class="weather-icon"></div>
+                    <p>Temp: <span id="fut-temp-2"> </span></p>
+                    <p>wind: <span id="fut-wind-2"> </span></p>
+                    <p>Humidity: <span id="fut-hum-2"> </span></p>
                 </div>
-                <div class="days" id="Wednesday">
-                    <p>
-                        Wednesday 3/31/2020
-                    </p>
-                    <div class="weather-icon">
-
-                    </div>
-                    Temp:<span id ="wed-temp"></span>
-                    </p>
-                    <p>
-                        wind:<span class ="wed-wind"></span>
-                    </p>
-                    <p>
-                        Humidity:<span class ="Wed-hum"></span>
-                    </p>
+                <!--Day 3-->
+                <div class="days card" id="day-3">
+                    <p>Wednesday 3/31/2020</p>
+                    <div class="weather-icon"></div>
+                    <p>Temp: <span id="fut-temp-3"> </span></p>
+                    <p>wind: <span id="fut-wind-3"> </span></p>
+                    <p>Humidity: <span id="fut-hum-3"> </span></p>
                 </div>
-                <div class="days" id="thursday">
-                    <p>
-                        Thurday 3/31/2020
-                    </p>
-                    <div class="weather-icon">
-
-                    </div>
-                    <p>
-                        Temp:<span id ="thu-temp"></span>
-                    </p>
-
-
-                    <p>
-                        wind:<span id ="thu-wind"></span>
-                    </p>
-                    <p>
-                        Humidity:<span class ="thu-hum"></span>
-                    </p>
-
+                <!--Day 4-->
+                <div class="days card" id="day-4">
+                    <p>Thurday 3/31/2020</p>
+                    <div class="weather-icon"></div>
+                    <p>Temp: <span id="fut-temp-4"> </span></p>
+                    <p>wind: <span id="fut-wind-4"> </span></p>
+                    <p>Humidity: <span id="fut-hum-4"> </span></p>
                 </div>
-
-                <div class="days" id="friday">
-                    <p>
-                        Friday 3/31/2020
-                    </p>
+                <!--Day 5-->
+                <div class="days card" id="day-5">
+                    <p>Friday 3/31/2020</p>
                     <!--weather image icon-->
-                    <div class="weather-icon">
-
-                    </div>
-                    <p>
-                        Temp:<span class="fri-temp"></span>
-                    </p>
-                    <p>
-                        wind:<span class="frid-wind"></span>
-                    </p>
-                    <p>
-                        Humidity:<span id ="frid-hum"></span>
-                    </p>
+                    <div class="weather-icon"></div>
+                    <p>Temp: <span id="fut-temp-5"> </span></p>
+                    <p>wind: <span id="fut-wind-5"></span></p>
+                    <p>Humidity: <span id="fut-hum-5"></span></p>
                 </div>
-
-
             </section>
         </section>
     </main>

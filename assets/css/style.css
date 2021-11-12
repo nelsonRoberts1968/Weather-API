@@ -52,6 +52,17 @@ main{
     flex-direction: column;
     align-items: center;
     margin:20px;
+
+}
+span{
+    font-size: large;
+    font-style: bold;
+    color: black;
+}
+#city-name{
+    font-size: large;
+    font-style: bold;
+    color: black;
 }
 .btn{
     background-color: lightslategrey;
