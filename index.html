@@ -28,21 +28,17 @@
             <div class="search-button">
                 <button type="submit" id="search">Search</button>
             </div>
-            <div class="city-btns">
-                <div class="city-button-container">
-                    <button type="submit" class="btn"> Dallas</button>
-                    <button type="submit" class="btn">Sacramento</button>
-                    <button type="submit" class="btn">Berkley</button>
-                    <button type="submit" class="btn">San Fransisco</button>
-                    <button type="submit" class="btn">San Jose</button>
-                    <button type="submit" class="btn">PalAlto</button>
-                </div>
+            <div id ="city-btns card">
+                    <span id="city-searched"></span>
             </div>
         </section>
         <!--Right results section-->
         <section class="col-9 card results">
             <div class="city-info">
-                <h3>City Name: <span id="city-name"></span></h3>
+                <div>
+                <h3 id="city-name"></h3>
+                <h3 id="current-date"></h3>
+                </div>
                 <p>
                     Temperature : <span id="temp"></span>
                 </p>
@@ -63,41 +59,41 @@
             <section class="days-of-week">
                 <!--Day 1-->
                 <div class="days card" id="day-1">
-                    <p>Monday 3/31/2020</p>
-                    <div class="weather-icon"></div>
+                    <span id="date-1"></span>
+                    <div id="weather-icon-1"></div> 
                     <p>Temp: <span id="fut-temp-1"> </span></p>
                     <p>wind: <span id="fut-wind-1"> </span></p>
                     <p>Humidity: <span id="fut-hum-1"> </span></p>
                 </div>
                 <!--Day 2-->
                 <div class="days card" id="day-2">
-                    <p>Tuesday 3/31/2020</p>
-                    <div class="weather-icon"></div>
+                    <span id="date-2"></span>
+                    <div id="weather-icon-2"></div> 
                     <p>Temp: <span id="fut-temp-2"> </span></p>
                     <p>wind: <span id="fut-wind-2"> </span></p>
                     <p>Humidity: <span id="fut-hum-2"> </span></p>
                 </div>
                 <!--Day 3-->
                 <div class="days card" id="day-3">
-                    <p>Wednesday 3/31/2020</p>
-                    <div class="weather-icon"></div>
+                    <span id="date-3"></span>
+                    <div id="weather-icon-3"></div> 
                     <p>Temp: <span id="fut-temp-3"> </span></p>
                     <p>wind: <span id="fut-wind-3"> </span></p>
                     <p>Humidity: <span id="fut-hum-3"> </span></p>
                 </div>
                 <!--Day 4-->
                 <div class="days card" id="day-4">
-                    <p>Thurday 3/31/2020</p>
-                    <div class="weather-icon"></div>
+                    <span id="date-4"></span>
+                    <div id="weather-icon-4"></div> 
                     <p>Temp: <span id="fut-temp-4"> </span></p>
                     <p>wind: <span id="fut-wind-4"> </span></p>
                     <p>Humidity: <span id="fut-hum-4"> </span></p>
                 </div>
                 <!--Day 5-->
                 <div class="days card" id="day-5">
-                    <p>Friday 3/31/2020</p>
+                    <span id="date-5"></span>
                     <!--weather image icon-->
-                    <div class="weather-icon"></div>
+                    <div id="weather-icon-5"></div>
                     <p>Temp: <span id="fut-temp-5"> </span></p>
                     <p>wind: <span id="fut-wind-5"></span></p>
                     <p>Humidity: <span id="fut-hum-5"></span></p>
@@ -105,6 +101,7 @@
             </section>
         </section>
     </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 
