@@ -1,4 +1,4 @@
-# Weather Application using Third Part API's
+# Weather Application using Third Party API's
 
 ## Project Description
 
