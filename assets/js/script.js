@@ -61,11 +61,12 @@ var day4 = moment(currentDate).add(4, "days").format("L");
 var day5 = moment(currentDate).add(5, "days").format("L");
 
 var currentDateEl = document.querySelector("#current-date");
-document.addEventListener("DOMContentLoaded", getSavedCityName);
+//document.addEventListener("DOMContentLoaded", getSavedCityName);
+getSavedCityName();
 //setting click listner on search button
 searchBtnEl.addEventListener("click", () => {
   getCityInfo();
-  saveCityName(cityName);
+ // saveCityName(cityName);
 });
 
 //Setting city name to the search list div
@@ -74,6 +75,7 @@ currentCityUvEl.style.backgroundColor = "#50C878";
 function getCityInfo() {
   //getting user input
   cityName = seachFormEl.value.trim();
+  saveCityName(cityName);
 
   if (!cityName) {
     alert("Please enter a valid city name");
@@ -83,7 +85,7 @@ function getCityInfo() {
     newCityName.textContent = cityName;
     cityContainerEl.appendChild(newCityName);
     newCityName.addEventListener("click", () => {
-        saveCityName(cityName);
+      setWeatherData();
     });
     //localStorage.setItem("nameOfCity", cityName);
 
@@ -116,6 +118,45 @@ function getCityInfo() {
     });
   }
 }
+//set city info second time
+function setWeatherData(){
+   //getting user input
+   cityName = seachFormEl.value.trim();
+   saveCityName(cityName);
+ 
+   if (!cityName) {
+     alert("Please enter a valid city name");
+   } else {
+     //Formatting URL with city name on it.
+     var apiUrl =
+       baseURL +
+       "weather?q=" +
+       cityName +
+       "&appid=" +
+       apiKey +
+       "&units=imperial";
+     fetch(apiUrl).then(function (response) {
+       if (response.ok) {
+         //console.log(response);
+         response.json().then(function (data) {
+           // console.log(data);
+           currentDateEl.textContent = "(" + currentDateFormatted + ")";
+           currentCityTemEl.textContent = data.main.temp + " °F";
+           currentCityHumEl.textContent = data.main.humidity + "%";
+           currentCityWindEl.textContent = data.wind.speed + " MPH";
+           cityNameEl.textContent = data.name;
+ 
+           //Getting Coordinates
+           lon = data.coord.lon;
+           lat = data.coord.lat;
+ 
+           getWeatherUvIndex();
+         });
+       }
+     });
+   }
+}
+
 
 //getting UV index of a current day
 function getWeatherUvIndex() {
@@ -194,10 +235,10 @@ function saveCityName(city) {
   if (localStorage.getItem("cities") === null) {
     cities = [];
   } else {
-    cities = JSON.parse(localStorage.getItem(cities));
+    cities = localStorage.getItem("cities").split(",");
   }
   cities.push(city);
-  localStorage.setItem("cities", JSON.stringify(cities));
+  localStorage.setItem("cities", cities);
 }
 
 function getSavedCityName() {
@@ -205,13 +246,16 @@ function getSavedCityName() {
   if (localStorage.getItem("cities") === null) {
     cities = [];
   } else {
-    cities = JSON.parse(localStorage.getItem(cities));
+    console.log(localStorage.getItem("cities"));
+    cities = localStorage.getItem("cities").split(",");
   }
   cities.forEach(function (city) {
     //Creating an element
     newCityName = document.createElement("button");
     newCityName.textContent = city;
     cityContainerEl.appendChild(newCityName);
-    getCityInfo();
+    cityContainerEl.addEventListener("click",()=>{
+      setWeatherData();
+    });
   });
 }
